@@ -348,7 +348,7 @@ main {
 .main-center {
   display: grid;
   grid-template-rows: auto auto auto 1fr;
-  border: 2px solid brown;
+  /* border: 2px solid brown; */
   max-width: 700px;
   min-height: calc(100% - 6rem);
   margin: 2rem auto;
@@ -425,8 +425,8 @@ textarea::placeholder {
 
 .main-center .output-text {
   width: 100%;
-  min-height: 5rem;
-  max-height: 100%;
+  min-height: 3rem;
+  max-height: 10rem;
   overflow: auto;
   padding: 0.75rem 0.5rem;
   border: 2px solid var(--grey-500);
