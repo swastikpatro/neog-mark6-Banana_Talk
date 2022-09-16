@@ -377,6 +377,33 @@ textarea::placeholder {
   color: var(--grey-500);
 }
 
+.textArea {
+  position: relative;
+}
+
+.refresh {
+  background: var(--primary-600);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.refresh i {
+  font-size: 0.85rem;
+}
+
+.refresh:hover {
+  transform: rotateZ(0.25turn);
+}
+
 .btn.translate-btn {
   display: block;
   width: fit-content;
@@ -428,4 +455,19 @@ textarea::placeholder {
   text-align: center;
   letter-spacing: var(--letterSpacing);
   margin-bottom: 0;
+}
+
+.alert {
+  background: var(--red-dark);
+  color: var(--red-light);
+  position: absolute;
+  top: 0;
+  left: 39%;
+  transition: var(--transition);
+  opacity: 0;
+}
+
+.alert.show-alert {
+  top: 1%;
+  opacity: 1;
 }

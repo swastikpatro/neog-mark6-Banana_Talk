@@ -17,15 +17,18 @@
   <body>
     <header>
       <h2 class="heading">banana talk</h2>
+      <div class="alert alert-danger">Please enter text</div>
     </header>
 
     <main>
       <div class="main-center">
-        <textarea
-          name="text"
-          placeholder="put your message here which you want to convert to banana language"
-        ></textarea>
-
+        <div class="textArea">
+          <textarea
+            name="text"
+            placeholder="put your message here which you want to convert to banana language"
+          ></textarea>
+          <span class="refresh"><i class="fa-solid fa-rotate-right"></i></span>
+        </div>
         <button class="btn translate-btn">translate to banana</button>
 
         <p>Translation will come here 👇</p>
