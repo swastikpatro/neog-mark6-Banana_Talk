@@ -482,6 +482,9 @@ textarea::placeholder {
   opacity: 0;
   letter-spacing: var(--letterSpacing);
   transform: translateX(-50%);
+  width: fit-content;
+  max-width: 40rem;
+  text-align: center;
 }
 
 .alert.show-alert {
