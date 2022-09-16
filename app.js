@@ -28,11 +28,11 @@ async function fetchText(myUrl) {
   try {
     const response = await fetch(myUrl);
     if (!response.ok) {
-      if(response.status === 429) {
+      if (response.status === 429) {
         alertMsg(
-            'danger',
-            `Error ${response.status}, rate limited, try after 1 hour.`
-          );
+          'danger',
+          `Error ${response.status}, rate limited, try after 1 hour.`
+        );
         throw new Error(`${response.status}, rate limited, try after 1 hour.`);
       }
       throw new Error('Cant fetch data');
@@ -74,6 +74,7 @@ refreshBtn.addEventListener('click', () => {
 */
 
 // Using fetch() .then()
+
 function handleError(error) {
   console.log(error);
 }
