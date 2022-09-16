@@ -28,6 +28,13 @@ async function fetchText(myUrl) {
   try {
     const response = await fetch(myUrl);
     if (!response.ok) {
+      if(response.status === 429) {
+        alertMsg(
+            'danger',
+            `Error ${response.status}, rate limited, try after 1 hour.`
+          );
+        throw new Error(`${response.status}, rate limited, try after 1 hour.`);
+      }
       throw new Error('Cant fetch data');
     }
     const data = await response.json();
@@ -79,6 +86,18 @@ function displayText(sentence) {
 function translateText(myUrl) {
   fetch(myUrl)
     .then(function (response) {
+      if (!response.ok) {
+        if (response.status === 429) {
+          alertMsg(
+            'danger',
+            `Error ${response.status}, rate limited, try after 1 hour.`
+          );
+          throw new Error(
+            `${response.status}, rate limited, try after 1 hour.`
+          );
+        }
+        throw new Error('Cant fetch Data');
+      }
       return response.json();
     })
     .then(function (data) {
