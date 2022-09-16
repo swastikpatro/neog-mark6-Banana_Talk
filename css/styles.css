@@ -477,13 +477,14 @@ textarea::placeholder {
 .alert {
   position: absolute;
   top: 0;
-  left: 39%;
+  left: 50%;
   transition: var(--transition);
   opacity: 0;
   letter-spacing: var(--letterSpacing);
+  transform: translateX(-50%);
 }
 
 .alert.show-alert {
-  top: 1%;
+  top: 2%;
   opacity: 1;
 }
