@@ -1,4 +1,4 @@
-# neog-mark6-Banana_Talk
+# Mark-6 Banana Talk 🍌
 
 This is a translator app which translates English to Minion's language or Banana language
 
@@ -7,3 +7,5 @@ This is a translator app which translates English to Minion's language or Banana
 - HTML
 - CSS
 - JS
+
+[Live link](https://swastik-banana-talk.netlify.app)
