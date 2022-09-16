@@ -1,4 +1,4 @@
-console.log('Hare krishna');
+// console.log('Hare krishna');
 
 // selection
 
@@ -9,17 +9,21 @@ const alertText = document.querySelector('.alert');
 const refreshBtn = document.querySelector('.refresh');
 const url = 'https://api.funtranslations.com/translate/minion.json';
 
-function alert() {
+function alertMsg(alertType, msg) {
   const tID = setInterval(() => {
+    alertText.innerText = `${msg}`;
+    alertText.classList.add(`alert-${alertType}`);
     alertText.classList.add('show-alert');
   }, 0);
 
   setTimeout(() => {
     clearInterval(tID);
+    alertText.classList.remove(`alert-${alertType}`);
     alertText.classList.remove('show-alert');
   }, 1000);
 }
 
+/*
 async function fetchText(myUrl) {
   try {
     const response = await fetch(myUrl);
@@ -36,12 +40,13 @@ async function fetchText(myUrl) {
 
 function displayText(translatedSent) {
   outputDiv.innerText = translatedSent;
+  alertMsg('success', 'Translated ✅');
 }
 
 async function translateText(url) {
   const inputValue = textarea.value;
   if (!inputValue) {
-    alert();
+    alertMsg('danger', 'Please enter text');
     outputDiv.innerText = 'Translated text will be here...';
     return;
   }
@@ -52,11 +57,50 @@ async function translateText(url) {
   displayText(translatedSentence);
 }
 
-// textarea.addEventListener('click', (e) => {});
-
 translateBtn.addEventListener('click', () => {
   translateText(url);
 });
+
+refreshBtn.addEventListener('click', () => {
+  textarea.value = '';
+});
+*/
+
+// Using fetch() .then()
+function handleError(error) {
+  console.log(error);
+}
+
+function displayText(sentence) {
+  outputDiv.innerText = sentence;
+  alertMsg('success', 'Translated ✅');
+}
+
+function translateText(myUrl) {
+  fetch(myUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      const {
+        contents: { translated: translatedSent },
+      } = data;
+      displayText(translatedSent);
+    })
+    .catch(handleError);
+}
+
+function handleTranslateBtnClick() {
+  const inputValue = textarea.value;
+  if (!inputValue) {
+    alertMsg('danger', 'Please enter text');
+    outputDiv.innerText = 'Translated text will be here...';
+    return;
+  }
+  translateText(`${url}?text=${inputValue}`);
+}
+
+translateBtn.addEventListener('click', handleTranslateBtnClick);
 
 refreshBtn.addEventListener('click', () => {
   textarea.value = '';
