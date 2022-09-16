@@ -437,7 +437,8 @@ textarea::placeholder {
 
 .about {
   background: var(--primary-500);
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
 }
 
 .about-center {
@@ -459,14 +460,23 @@ textarea::placeholder {
   margin-bottom: 0;
 }
 
-.alert {
+.alert-danger {
   background: var(--red-dark);
   color: var(--red-light);
+}
+
+.alert-success {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.alert {
   position: absolute;
   top: 0;
   left: 39%;
   transition: var(--transition);
   opacity: 0;
+  letter-spacing: var(--letterSpacing);
 }
 
 .alert.show-alert {
