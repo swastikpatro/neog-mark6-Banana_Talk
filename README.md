@@ -1,2 +1,9 @@
 # neog-mark6-Banana_Talk
- This is a translator app which translates English to Minion's language or Banana language
+
+This is a translator app which translates English to Minion's language or Banana language
+
+## Tech used
+
+- HTML
+- CSS
+- JS
