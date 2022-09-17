@@ -72,6 +72,12 @@ refreshBtn.addEventListener('click', () => {
   textarea.value = '';
   outputDiv.innerText = 'Translated text will be here...';
 });
+
+textarea.addEventListener('input', (e) => {
+  if (!e.currentTarget.value) {
+    outputDiv.innerText = 'Translated text will be here...';
+  }
+});
 */
 
 // Using fetch() .then()
@@ -115,21 +121,25 @@ function handleTranslateBtnClick() {
   const inputValue = textarea.value;
   if (!inputValue) {
     alertMsg('danger', 'Please enter text');
-    outputDiv.innerText = 'Translated text will be here...';
+    defaultOutput();
     return;
   }
   translateText(`${url}?text=${inputValue}`);
+}
+
+function defaultOutput() {
+  outputDiv.innerText = 'Translated text will be here...';
 }
 
 translateBtn.addEventListener('click', handleTranslateBtnClick);
 
 refreshBtn.addEventListener('click', () => {
   textarea.value = '';
-  outputDiv.innerText = 'Translated text will be here...';
+  defaultOutput();
 });
 
 textarea.addEventListener('input', (e) => {
   if (!e.currentTarget.value) {
-    outputDiv.innerText = 'Translated text will be here...';
+    defaultOutput();
   }
 });
