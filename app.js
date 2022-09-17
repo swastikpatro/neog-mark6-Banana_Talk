@@ -127,3 +127,9 @@ refreshBtn.addEventListener('click', () => {
   textarea.value = '';
   outputDiv.innerText = 'Translated text will be here...';
 });
+
+textarea.addEventListener('input', (e) => {
+  if (!e.currentTarget.value) {
+    outputDiv.innerText = 'Translated text will be here...';
+  }
+});
