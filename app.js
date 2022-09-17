@@ -124,4 +124,5 @@ translateBtn.addEventListener('click', handleTranslateBtnClick);
 
 refreshBtn.addEventListener('click', () => {
   textarea.value = '';
+  outputDiv.innerText = 'Translated text will be here...';
 });
