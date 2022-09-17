@@ -70,6 +70,7 @@ translateBtn.addEventListener('click', () => {
 
 refreshBtn.addEventListener('click', () => {
   textarea.value = '';
+  outputDiv.innerText = 'Translated text will be here...';
 });
 */
 
