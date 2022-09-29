@@ -124,11 +124,6 @@ refreshBtn.addEventListener('click', () => {
   defaultOutput();
 });
 
-textarea.addEventListener('input', (e) => {
-  if (!e.currentTarget.value) {
-    defaultOutput();
-  }
-});
 textarea.addEventListener('click', () => {
   defaultOutput();
 });
