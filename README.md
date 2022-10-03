@@ -2,6 +2,8 @@
 
 This is a translator app which translates English to Minion's language or Banana language
 
+## [Live link](https://swastik-banana-talk.netlify.app)
+
 ## Tech used
 
 - HTML
@@ -15,4 +17,6 @@ This is a translator app which translates English to Minion's language or Banana
 - **(Additional feature)** If you click refresh button, the input is emptied (cleared) and the output will show the default text **"Translated text will be here..."**.
 - **(Additional feature)** If you click the textarea when output for previous operation is shown then the output will set to default text, because we assume you might be changing your input message.
 
-[Live link](https://swastik-banana-talk.netlify.app)
+## Snapshot of the app
+
+![Banana Talk App](./banana-snap.JPG)
